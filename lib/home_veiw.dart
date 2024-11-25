@@ -70,9 +70,10 @@ class HomeVeiwState extends State<HomeVeiw> {
 
   createImageLabeling() async {
     try {
-      final modelPath = await getModelPath('assets/ml/mobilenet.tflite');
+      final modelPath =
+          await getModelPath('assets/ml/efficientnet_model.tflite');
       final options = LocalLabelerOptions(
-        confidenceThreshold: 0.5,
+        confidenceThreshold: 0.7,
         modelPath: modelPath,
       );
       imageLabeler = ImageLabeler(options: options);
